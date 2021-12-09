@@ -29,14 +29,30 @@ btnContactMe.addEventListener('click',()=>{
     scrollIntoView('#contact');
 });
 
-const scrollIntoView = (selector) =>{
-    const contactMe = document.querySelector(selector);
-    contactMe.scrollIntoView({behavior:'smooth'});
-}
-
 //make home section to transparent
 const homeWrap = document.querySelector('.home__wrap');
 const homeHeight = homeWrap.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
     homeWrap.style.opacity = 1 - window.scrollY / homeHeight;
 });
+
+//handle up button
+const btnUp = document.querySelector('.upbutton');
+document.addEventListener('scroll', () =>{
+    if(window.scrollY > homeHeight / 2){
+        btnUp.classList.add('on');
+    }
+    else{
+        btnUp.classList.remove('on');
+    }
+});
+
+btnUp.addEventListener('click', () => {
+    scrollIntoView('#home');
+})
+
+
+const scrollIntoView = (selector) =>{
+    const contactMe = document.querySelector(selector);
+    contactMe.scrollIntoView({behavior:'smooth'});
+}
