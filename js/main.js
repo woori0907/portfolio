@@ -33,3 +33,10 @@ const scrollIntoView = (selector) =>{
     const contactMe = document.querySelector(selector);
     contactMe.scrollIntoView({behavior:'smooth'});
 }
+
+//make home section to transparent
+const homeWrap = document.querySelector('.home__wrap');
+const homeHeight = homeWrap.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+    homeWrap.style.opacity = 1 - window.scrollY / homeHeight;
+});
