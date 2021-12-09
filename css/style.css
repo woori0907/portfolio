@@ -93,6 +93,7 @@ p{
     color: var(--color-white);
     width: 100%;
     padding: 16px;
+    z-index: 999;
 }
 #navbar.navbar--dark{
     background-color: var(--color-skyblue);

@@ -1,13 +1,32 @@
 'use strict';
 
 // Make navbar transparent when it is on the top
-const navBar = document.querySelector("#navbar");
-const navBarHeight = navBar.getBoundingClientRect().height;
+const navbar = document.querySelector("#navbar");
+const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-    if(window.scrollY > navBarHeight){
-        navBar.classList.add('navbar--dark');
+    if(window.scrollY > navbarHeight){
+        navbar.classList.add('navbar--dark');
     }
     else{
-        navBar.classList.remove('navbar--dark');
+        navbar.classList.remove('navbar--dark');
     }
+});
+
+//Handle scrolling when tapping on the navbar menu
+const navbarMenu = document.querySelector('.navbar__menu');
+navbarMenu.addEventListener('click', (event)=>{
+    const target = event.target;
+    const link = target.dataset.link;
+    if(link === null){
+        return;
+    }
+    const scrollTo = document.querySelector(link);
+    scrollTo.scrollIntoView({behavior: 'smooth'});
+});
+
+//Handle scrolling when tapping on the contact me button
+const btnContactMe = document.querySelector('.home__contact');
+btnContactMe.addEventListener('click',()=>{
+    const contactMe = document.querySelector('#contact');
+    contactMe.scrollIntoView({behavior:'smooth'});
 });
