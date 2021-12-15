@@ -96,3 +96,36 @@ const scrollIntoView = (selector) =>{
     const contactMe = document.querySelector(selector);
     contactMe.scrollIntoView({behavior:'smooth'});
 }
+
+const sectionIds = ['#home', '#about', '#skills', '#work', '#testimonials', '#contact'];
+
+const sections = sectionIds.map(id => document.querySelector(id));
+const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"]`));
+let selectedNavItem = navItems[0];
+let selectedNavIndex;
+function selecNavItem (selected){
+    selectedNavItem.classList.remove('active');
+    selectedNavItem = navItems[selectedIndex];
+    selectedNavItem.classList.add('active'); 
+}
+
+const option = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3,
+}
+const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        if(!entry.isIntersecting && entry.intersectionRatio > 0){
+            const index = sectionIds.indexOf(`#${entry.target.id}`);
+            if(entry.boundingClientRect.y < 0){
+                selectedNavIndex = index + 1;
+            }
+            else{
+                selectedNavIndex = index - 1;
+            }     
+        }
+    });
+}
+const observer = new IntersectionObserver(observerCallback, option);
+sections.forEach(section => observer.observe(section));
