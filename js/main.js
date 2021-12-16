@@ -92,10 +92,7 @@ workBtnContainer.addEventListener('click', (event) =>{
 });
 
 
-const scrollIntoView = (selector) =>{
-    const contactMe = document.querySelector(selector);
-    contactMe.scrollIntoView({behavior:'smooth'});
-}
+
 
 const sectionIds = ['#home', '#about', '#skills', '#work', '#testimonials', '#contact'];
 
@@ -105,8 +102,14 @@ let selectedNavItem = navItems[0];
 let selectedNavIndex;
 function selecNavItem (selected){
     selectedNavItem.classList.remove('active');
-    selectedNavItem = navItems[selectedIndex];
+    selectedNavItem = selected;
     selectedNavItem.classList.add('active'); 
+}
+
+const scrollIntoView = (selector) =>{
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:'smooth'});
+    selecNavItem(navItems[sectionIds.indexOf(selector)]);
 }
 
 const option = {
@@ -129,3 +132,12 @@ const observerCallback = (entries, observer) => {
 }
 const observer = new IntersectionObserver(observerCallback, option);
 sections.forEach(section => observer.observe(section));
+window.addEventListener('wheel', () => {
+    if(window.scrollY === 0){
+        selectedNavIndex = 0;
+    }
+    else if(Math.round(window.scrollY + window.innerHeight) >= document.body.clientHeight){
+        selectedNavIndex = navItems.length-1;
+    }
+    selecNavItem(navItems[selectedNavIndex]);
+});
