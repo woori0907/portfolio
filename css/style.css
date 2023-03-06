@@ -456,6 +456,43 @@ p {
   transition: all 300ms ease-in;
   opacity: 0;
 }
+
+.dotNav {
+  z-index: 999;
+  list-style-type: none;
+  position: fixed;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-25%);
+}
+
+.dotNav__item {
+  width: 14px;
+  height: 14px;
+  margin: 7px;
+  display: inline-block;
+
+  position: relative;
+}
+
+.item__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+  display: block;
+  margin: 0 auto;
+  transition: all 0.5s;
+  transform-origin: center;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+.item__dot.active {
+  width: 10px;
+  height: 10px;
+}
+
 .upbutton.on {
   visibility: visible;
   opacity: 1;

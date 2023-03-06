@@ -4,36 +4,6 @@ const pages = document.getElementsByClassName("section");
 let pagenation = 0;
 let lastPage = pages.length - 1;
 
-// Make navbar transparent when it is on the top
-// const navbar = document.querySelector("#navbar");
-
-// const navbarHeight = navbar.getBoundingClientRect().height;
-// document.addEventListener("scroll", () => {
-//   if (window.scrollY > navbarHeight) {
-//     navbar.classList.add("navbar--dark");
-//   } else {
-//     navbar.classList.remove("navbar--dark");
-//   }
-// });
-
-// //Handle scrolling when tapping on the navbar menu
-// const navbarMenu = document.querySelector(".navbar__menu");
-// navbarMenu.addEventListener("click", (event) => {
-//   const target = event.target;
-//   const link = target.dataset.link;
-//   if (link === null) {
-//     return;
-//   }
-//   navbarMenu.classList.remove("open");
-//   scrollIntoView(link);
-// });
-
-// // Navbar toggle button for small screen
-// const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
-// navbarToggleBtn.addEventListener("click", () => {
-//   navbarMenu.classList.toggle("open");
-// });
-
 //Handle scrolling when tapping on the contact me button
 const btnContactMe = document.querySelector(".home__contact");
 btnContactMe.addEventListener("click", () => {
@@ -47,57 +17,21 @@ document.addEventListener("scroll", () => {
   homeWrap.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
-//handle up button
-const btnUp = document.querySelector(".upbutton");
-document.addEventListener("scroll", () => {
-  if (window.scrollY > homeHeight / 2) {
-    btnUp.classList.add("on");
-  } else {
-    btnUp.classList.remove("on");
-  }
-});
-
-btnUp.addEventListener("click", () => {
-  scrollIntoView("#home");
-});
-
-// let timer;
-// let currentScroll;
-// const wrapper = document.querySelector(".wrapper");
-// console.log(wrapper);
-// window.addEventListener("scroll", (e) => {
-//   if (timer) {
-//     clearTimeout(timer);
-//   }
-//   timer = setTimeout(() => {
-//     console.log(
-//       document.documentElement.scrollTop > currentScroll ? "up" : "down"
-//     );
-//     if (document.documentElement.scrollTop > currentScroll) {
-//       console.log(document.documentElement.scrollTop > currentScroll);
-//       pagenation++;
-//       console.log(pagenation);
-//       if (pagenation == lastPage || pagenation >= lastPage) {
-//         pagenation = lastPage;
-//         return;
-//       }
-
-//       pages[pagenation].scrollIntoView({ behavior: "smooth" });
-//     } else if (document.documentElement.scrollTop < currentScroll) {
-//       pagenation--;
-//       console.log(pagenation);
-//       if (pagenation == 1 || pagenation <= 1) {
-//         pagenation = 1;
-//         return;
-//       }
-//       pages[pagenation].scrollIntoView({ behavior: "smooth" });
-//     }
-//     // console.log(pages[pagenation]);
-//     currentScroll = document.documentElement.scrollTop;
-//   }, 500);
-// });
-
 let timer;
+const dotNavItem = document.querySelectorAll(".item__dot");
+
+window.addEventListener("load", () => {
+  dotNavItem[pagenation].classList.add("active");
+});
+
+let prev = pagenation;
+dotNavItem.forEach((item, index) => {
+  item.addEventListener("click", (e) => {
+    dotNavItem[prev].classList.remove("active");
+    dotNavItem[index].classList.add("active");
+    prev = index;
+  });
+});
 
 window.addEventListener(
   "wheel",
@@ -107,11 +41,12 @@ window.addEventListener(
       clearTimeout(timer);
     }
 
+    let prev = pagenation;
+
     timer = setTimeout(() => {
       //위로 갈 때
       if (e.deltaY < 0) {
         pagenation--;
-        console.log(pagenation);
         if (pagenation < 0) pagenation = 0;
         pages[pagenation].scrollIntoView({ behavior: "smooth" });
       }
@@ -119,9 +54,10 @@ window.addEventListener(
       else if (e.deltaY > 0) {
         pagenation++;
         if (pagenation > lastPage) pagenation = lastPage;
-        console.log(pagenation);
         pages[pagenation].scrollIntoView({ behavior: "smooth" });
       }
+      dotNavItem[prev].classList.remove("active");
+      dotNavItem[pagenation].classList.add("active");
     }, 100);
   },
   { passive: false }
@@ -220,4 +156,84 @@ const option = {
 //     selectedNavIndex = navItems.length - 1;
 //   }
 //   selecNavItem(navItems[selectedNavIndex]);
+// });
+
+// Make navbar transparent when it is on the top
+// const navbar = document.querySelector("#navbar");
+
+// const navbarHeight = navbar.getBoundingClientRect().height;
+// document.addEventListener("scroll", () => {
+//   if (window.scrollY > navbarHeight) {
+//     navbar.classList.add("navbar--dark");
+//   } else {
+//     navbar.classList.remove("navbar--dark");
+//   }
+// });
+
+// //Handle scrolling when tapping on the navbar menu
+// const navbarMenu = document.querySelector(".navbar__menu");
+// navbarMenu.addEventListener("click", (event) => {
+//   const target = event.target;
+//   const link = target.dataset.link;
+//   if (link === null) {
+//     return;
+//   }
+//   navbarMenu.classList.remove("open");
+//   scrollIntoView(link);
+// });
+
+// // Navbar toggle button for small screen
+// const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+// navbarToggleBtn.addEventListener("click", () => {
+//   navbarMenu.classList.toggle("open");
+// });
+
+//handle up button
+// const btnUp = document.querySelector(".upbutton");
+// document.addEventListener("scroll", () => {
+//   if (window.scrollY > homeHeight / 2) {
+//     btnUp.classList.add("on");
+//   } else {
+//     btnUp.classList.remove("on");
+//   }
+// });
+
+// btnUp.addEventListener("click", () => {
+//   scrollIntoView("#home");
+// });
+
+// let timer;
+// let currentScroll;
+// const wrapper = document.querySelector(".wrapper");
+// console.log(wrapper);
+// window.addEventListener("scroll", (e) => {
+//   if (timer) {
+//     clearTimeout(timer);
+//   }
+//   timer = setTimeout(() => {
+//     console.log(
+//       document.documentElement.scrollTop > currentScroll ? "up" : "down"
+//     );
+//     if (document.documentElement.scrollTop > currentScroll) {
+//       console.log(document.documentElement.scrollTop > currentScroll);
+//       pagenation++;
+//       console.log(pagenation);
+//       if (pagenation == lastPage || pagenation >= lastPage) {
+//         pagenation = lastPage;
+//         return;
+//       }
+
+//       pages[pagenation].scrollIntoView({ behavior: "smooth" });
+//     } else if (document.documentElement.scrollTop < currentScroll) {
+//       pagenation--;
+//       console.log(pagenation);
+//       if (pagenation == 1 || pagenation <= 1) {
+//         pagenation = 1;
+//         return;
+//       }
+//       pages[pagenation].scrollIntoView({ behavior: "smooth" });
+//     }
+//     // console.log(pages[pagenation]);
+//     currentScroll = document.documentElement.scrollTop;
+//   }, 500);
 // });
