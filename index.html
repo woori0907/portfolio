@@ -17,6 +17,10 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/053fb83854.js"
       crossorigin="anonymous"
@@ -27,12 +31,14 @@
 
   <body>
     <section class="wrapper">
+      <div class="cursor"></div>
+
       <!-- navbar -->
       <!--
     <nav id="navbar">
       <div class="navbar__logo">
         <img src="img/favicon.png" alt="Woori's Portfolio logo" />
-        <a href="#">Woori</a>
+        <a >Woori</a>
       </div>
       <div>
         <ul class="navbar__menu">
@@ -58,73 +64,162 @@
             alt="Woori's Profile Photo"
             class="home__avatar"
           />
-          <h1 class="home__title">Hello,<br />I'm Dream Coder</h1>
+          <h1 class="home__title">Woori's<br />PORTFOLIO</h1>
           <h2 class="home__description">
             디자인과 프론트엔드를 넘나드는 프론트엔드 개발자
           </h2>
-          <button class="home__contact">Contact Me</button>
         </div>
       </section>
       <!-- about -->
-      <section id="about" class="section section__container">
-        <h1>About Me</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed
-          quam enim. Fusce pharetra neque nec ipsum mattis, sollicitudin rhoncus
-          ipsum hendrerit. Aliquam erat volutpat. Nunc euismod dignissim
-          scelerisque. Nullam iaculis imperdiet libero, nec consectetur lectus
-          tincidunt eget.
-        </p>
-        <div class="about__majors">
-          <div class="major">
-            <div class="major__icon">
-              <i class="fab fa-html5"></i>
+      <section id="about" class="section section__container about">
+        <div class="about__overview">
+          <h1 class="section__title">About Me</h1>
+          <p>
+            새로운 것을 배우기를 좋아하고, 무언가를 배울 때 가장 큰 보람을
+            느낍니다. <br />
+            일러스트, 디자인, 그리고 개발까지. 분야를 막론하고 새로운 지식을
+            습득하는 일을 좋아하며,
+          </p>
+          <p>
+            매 순간 빠르게 변화하는 개발 생태 속에서 <br />변화에 능동적으로
+            적응하고, 주어진 유연하게 대처하는 프론트엔드 개발자가 되겠습니다.
+          </p>
+        </div>
+        <div class="skillset">
+          <div class="skillset__left">
+            <h3 class="skillset__title">Programming Skills</h3>
+            <div class="skill">
+              <div class="skill__description">
+                <span>HTML</span>
+                <span>90%</span>
+              </div>
+              <div class="skill__bar">
+                <div id="html_value" class="skill__value"></div>
+              </div>
             </div>
-            <h2 class="major__title">Html5</h2>
-            <p class="major_description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
+            <div class="skill">
+              <div class="skill__description">
+                <span>CSS</span>
+                <span>80%</span>
+              </div>
+              <div class="skill__bar">
+                <div id="css_value" class="skill__value"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>JavaScript</span>
+                <span>70%</span>
+              </div>
+              <div class="skill__bar">
+                <div id="js_value" class="skill__value"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>React</span>
+                <span>45%</span>
+              </div>
+              <div class="skill__bar">
+                <div id="react_value" class="skill__value"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>NodeJS</span>
+                <span>30%</span>
+              </div>
+              <div class="skill__bar">
+                <div id="njs_value" class="skill__value"></div>
+              </div>
+            </div>
           </div>
-          <div class="major">
-            <div class="major__icon">
-              <i class="fas fa-pencil-ruler"></i>
+          <div class="skillset__right">
+            <h3 class="skillset__title">Design Skills</h3>
+            <div class="skills__design">
+              <div class="skill__design">
+                <div class="skill__icon">
+                  <img src="img\ps_appicon.svg" alt="" />
+                </div>
+                <p class="skill__name">Adobe<br />Photoshop</p>
+              </div>
+              <div class="skill__design">
+                <div class="skill__icon">
+                  <img src="img\ai_appicon.svg" alt="" />
+                </div>
+                <p class="skill__name">Adobe<br />Illustrator</p>
+              </div>
+              <div class="skill__design">
+                <div class="skill__icon">
+                  <img src="img\246x0w.webp" alt="" />
+                </div>
+                <p class="skill__name">Procreate</p>
+              </div>
             </div>
-            <h2 class="major__title">Design</h2>
-            <p class="major_description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-          <div class="major">
-            <div class="major__icon">
-              <i class="fas fa-video"></i>
-            </div>
-            <h2 class="major__title">Video</h2>
-            <p class="major_description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
           </div>
         </div>
-        <div class="about__jobs">
-          <div class="job">
-            <p class="job__name">소나기 크리에이티브</p>
-            <p class="job__period">2019. 4 - 2021. 6</p>
-          </div>
-          <div class="job">
-            <p class="job__name">신한양직업전문학교</p>
-            <p class="job__period">2018. 8 - 2018. 12</p>
-          </div>
-          <div class="job">
-            <p class="job__name">대웅에이젠시</p>
-            <p class="job__period">2017. 8 - 2018. 1</p>
-          </div>
-          <div class="job">
-            <p class="job__name">동의대학교 게임공학과</p>
-            <p class="job__period">2011. 3 - 2015. 2</p>
-          </div>
-        </div>
+        <div class="about__skills"></div>
       </section>
+      <!-- <section id="major" class="section slide__container">
+        <h1>About Me</h1>
+        <div class="slide__frame">
+          <div class="slide__wrapper">
+            <div class="about__majors slide__page">
+              <div class="major__wrap">
+                <div class="major">
+                  <div class="major__icon">
+                    <i class="fab fa-html5"></i>
+                  </div>
+                  <h2 class="major__title">Html5</h2>
+                  <p class="major_description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+                <div class="major">
+                  <div class="major__icon">
+                    <i class="fas fa-pencil-ruler"></i>
+                  </div>
+                  <h2 class="major__title">Design</h2>
+                  <p class="major_description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+                <div class="major">
+                  <div class="major__icon">
+                    <i class="fas fa-video"></i>
+                  </div>
+                  <h2 class="major__title">Video</h2>
+                  <p class="major_description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="about__jobs slide__page">
+              <div class="job__wrap">
+                <div class="job">
+                  <p class="job__name">소나기 크리에이티브</p>
+                  <p class="job__period">2019. 4 - 2021. 6</p>
+                </div>
+                <div class="job">
+                  <p class="job__name">신한양직업전문학교</p>
+                  <p class="job__period">2018. 8 - 2018. 12</p>
+                </div>
+                <div class="job">
+                  <p class="job__name">대웅에이젠시</p>
+                  <p class="job__period">2017. 8 - 2018. 1</p>
+                </div>
+                <div class="job">
+                  <p class="job__name">동의대학교 게임공학과</p>
+                  <p class="job__period">2011. 3 - 2015. 2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
       <!-- skills -->
-      <section id="skills" class="section">
+      <!-- <section id="skills" class="section">
         <div class="section__container">
           <h1>Skills</h1>
           <h2>Skills & Attributes</h2>
@@ -135,93 +230,20 @@
             dignissim scelerisque. Nullam iaculis imperdiet libero, nec
             consectetur lectus tincidunt eget.
           </p>
-          <div class="skillset">
-            <div class="skillset__left">
-              <h3 class="skillset__title">Skills</h3>
-              <div class="skill">
-                <div class="skill__description">
-                  <span>HTML</span>
-                  <span>99%</span>
-                </div>
-                <div class="skill__bar">
-                  <div class="skill__value"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <div class="skill__description">
-                  <span>CSS</span>
-                  <span>80%</span>
-                </div>
-                <div class="skill__bar">
-                  <div class="skill__value"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <div class="skill__description">
-                  <span>JavaScript</span>
-                  <span>55%</span>
-                </div>
-                <div class="skill__bar">
-                  <div class="skill__value"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <div class="skill__description">
-                  <span>Jquery</span>
-                  <span>45%</span>
-                </div>
-                <div class="skill__bar">
-                  <div class="skill__value"></div>
-                </div>
-              </div>
-              <div class="skill">
-                <div class="skill__description">
-                  <span>NodeJS</span>
-                  <span>20%</span>
-                </div>
-                <div class="skill__bar">
-                  <div class="skill__value"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skillset__right">
-              <div class="tools">
-                <h3 class="skillset__title">Tools</h3>
-                <ul class="tools__list">
-                  <li>Visual Studio Code</li>
-                  <li>Atom</li>
-                  <li>Android Studio</li>
-                </ul>
-              </div>
-              <div class="etc">
-                <h3 class="skillset__title">Etc.</h3>
-                <ul class="etc__list">
-                  <li>git</li>
-                  <li>Adobe Photoshop</li>
-                  <li>Adobe Illustrator</li>
-                  <li>Adobe Indesign</li>
-                  <li>Affinity Photo</li>
-                  <li>Affinity Design</li>
-                  <li>Affinity Publisher</li>
-                  <li>Adobe Premiere Pro</li>
-                  <li>Adobe After effect</li>
-                  <li>Final cut Pro</li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+      </section> -->
       <!-- work -->
       <section id="work" class="section section__container">
-        <h1>My Work</h1>
-        <h3>Projects</h3>
+        <div class="section__title_wrap">
+          <h1 class="section__title">My Work</h1>
+          <h3 class="title__desc">01 Design</h3>
+        </div>
         <div class="work__categories">
           <button class="category__btn selected" data-filter="*">
             All<span class="category__count"></span>
           </button>
-          <button class="category__btn" data-filter="front-end">
-            FrontEnd<span class="category__count"></span>
+          <button class="category__btn" data-filter="illust">
+            Illust<span class="category__count"></span>
           </button>
           <button class="category__btn" data-filter="visual-design">
             Visual Design<span class="category__count"></span>
@@ -231,146 +253,311 @@
           </button>
         </div>
         <div class="work__projects">
-          <a
-            href="#"
-            class="project"
-            target="blank"
-            data-type="editorial-design"
-          >
-            <img
-              src="img/projects/ach.jpg"
-              alt="아세안문화원 뉴스레터"
-              class="project__img"
-            />
-            <div class="project__description">
-              <h3>월간 아세안문화원 웹진</h3>
-              <span>월간 아세안문화원 웹진 제작</span>
+          <div class="projects__wrap">
+            <div
+              class="project"
+              data-type="editorial-design"
+              data-lightboximg="img/projects/book1_big.jpg"
+            >
+              <img
+                src="img/projects/book1.jpg"
+                alt="인천119스토리"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>인천119스토리 웹진</h3>
+                <span>인천소방본부 웹진 제작</span>
+              </div>
             </div>
-          </a>
-          <a
-            href="#"
-            class="project"
-            target="blank"
-            data-type="editorial-design"
-          >
-            <img
-              src="img/projects/book1.jpg"
-              alt="인천119스토리"
-              class="project__img"
-            />
-            <div class="project__description">
-              <h3>인천119스토리 웹진</h3>
-              <span>인천소방본부 웹진 제작</span>
+            <div
+              class="project"
+              data-type="editorial-design"
+              data-lightboximg="img/projects/book2_big.jpg"
+            >
+              <img
+                src="img/projects/book2.jpg"
+                alt="보건환경Life"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>보건환경Life</h3>
+                <span>부산광역시 보건환경연구원 소식지 제작</span>
+              </div>
             </div>
-          </a>
-          <a
-            href="#"
-            class="project"
-            target="blank"
-            data-type="editorial-design"
-          >
-            <img
-              src="img/projects/book2.jpg"
-              alt="보건환경Life"
-              class="project__img"
-            />
-            <div class="project__description">
-              <h3>보건환경Life</h3>
-              <span>부산광역시 보건환경연구원 소식지 제작</span>
+            <div class="project" data-type="visual-design">
+              <img
+                src="img/projects/newsletter1.jpg"
+                alt="지구촌공생회 뉴스레터"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>지구촌공생회 뉴스레터</h3>
+                <span>지구촌공생회 뉴스레터 제작</span>
+              </div>
             </div>
-          </a>
-          <a href="#" class="project" target="blank" data-type="front-end">
-            <img
-              src="img/projects/deu_jinro.jpg"
-              alt="동의대학교 온라인 진로멘토링"
-              class="project__img"
-            />
-            <div class="project__description">
-              <h3>동의대학교 온라인 진로 멘토링</h3>
-              <span>동의대학교 입학처 온라인 진로 멘토링 홈페이지 제작</span>
+            <div class="project" data-type="visual-design">
+              <img
+                src="img/projects/newsletter2.jpg"
+                alt="아세안문화원 뉴스레터"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>월간 아세안문화원 뉴스레터</h3>
+                <span>월간 아세안문화원 뉴스레터 제작</span>
+              </div>
             </div>
-          </a>
-          <a href="#" class="project" target="blank" data-type="visual-design">
-            <img
-              src="img/projects/newsletter1.jpg"
-              alt="지구촌공생회 뉴스레터"
-              class="project__img"
-            />
-            <div class="project__description">
-              <h3>지구촌공생회 뉴스레터</h3>
-              <span>지구촌공생회 뉴스레터 제작</span>
+            <div
+              class="project"
+              data-type="visual-design"
+              data-lightboximg="img/projects/poster1_big.jpg"
+            >
+              <img
+                src="img/projects/poster1.jpg"
+                alt="아세안문화원 뉴스레터"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>경기 기술창업취업 프로그램 홍보물</h3>
+                <span
+                  >경기도경제과학진흥원 기술창업취업 프로그램 홍보 포스터 및
+                  배너 제작</span
+                >
+              </div>
             </div>
-          </a>
-          <a href="#" class="project" target="blank" data-type="visual-design">
-            <img
-              src="img/projects/newsletter2.jpg"
-              alt="아세안문화원 뉴스레터"
-              class="project__img"
-            />
-            <div class="project__description">
-              <h3>월간 아세안문화원 뉴스레터</h3>
-              <span>월간 아세안문화원 뉴스레터 제작</span>
+            <div
+              class="project"
+              data-type="visual-design"
+              data-lightboximg="img/projects/poster2_big.jpg"
+            >
+              <img
+                src="img/projects/poster2.jpg"
+                alt="아세안문화원 뉴스레터"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>대학창업지원사업 포스터</h3>
+                <span>경기도경제과학진흥원 대학창업지원사업 포스터 제작</span>
+              </div>
             </div>
-          </a>
-          <a href="#" class="project" target="blank" data-type="visual-design">
-            <img
-              src="img/projects/poster1.jpg"
-              alt="아세안문화원 뉴스레터"
-              class="project__img"
-            />
-            <div class="project__description">
-              <h3>경기 기술창업취업 프로그램 홍보물</h3>
-              <span
-                >경기도경제과학진흥원 기술창업취업 프로그램 홍보 포스터 및 배너
-                제작</span
-              >
+            <div
+              class="project"
+              data-type="illust"
+              data-lightboximg="img/projects/illust1.png"
+            >
+              <img
+                src="img/projects/illust1_thm.jpg"
+                alt="습작"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>일러스트 습작</h3>
+                <span>봄 컨셉의 귀여운 캐릭터 일러스트</span>
+              </div>
             </div>
-          </a>
-          <a href="#" class="project" target="blank" data-type="visual-design">
-            <img
-              src="img/projects/poster2.jpg"
-              alt="아세안문화원 뉴스레터"
-              class="project__img"
-            />
-            <div class="project__description">
-              <h3>대학창업지원사업 홍보 포스터</h3>
-              <span
-                >경기도경제과학진흥원 대학창업지원사업 홍보 포스터 제작</span
-              >
+            <div
+              class="project"
+              data-type="illust"
+              data-lightboximg="img/projects/illust2.png"
+            >
+              <img
+                src="img/projects/illust2_thm.jpg"
+                alt="습작"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>일러스트 습작</h3>
+                <span>귀여운 캐릭터 일러스트</span>
+              </div>
             </div>
-          </a>
-          <a
-            href="#"
-            class="project"
-            target="blank"
-            data-type="editorial-design"
-          >
-            <img
-              src="img/projects/ppt1.jpg"
-              alt="영상물등급위원회 PPT"
-              class="project__img"
-            />
-            <div class="project__description">
-              <h3>영상물등급위원회 채용설명회 PPT</h3>
-              <span>영상물등급위원회 채용설명회 PPT 제작</span>
+            <div
+              class="project"
+              data-type="illust"
+              data-lightboximg="img/projects/illust3.jpeg"
+            >
+              <img
+                src="img/projects/illust3_thm.jpg"
+                alt="습작"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>일러스트 습작</h3>
+                <span>겨울 일상 일러스트</span>
+              </div>
             </div>
-          </a>
-          <a
-            href="#"
-            class="project"
-            target="blank"
-            data-type="editorial-design"
-          >
-            <img
-              src="img/projects/ppt2.jpg"
-              alt="남동발전 PPT"
-              class="project__img"
-            />
-            <div class="project__description">
-              <h3>2020 성과발표 PPT</h3>
-              <span>한국남동발전 여수발전본부 2020 성과발표 PPT 제작</span>
+            <div
+              class="project"
+              data-type="illust"
+              data-lightboximg="img/projects/illust4.png"
+            >
+              <img
+                src="img/projects/illust4_thm.jpg"
+                alt="습작"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>일러스트 습작</h3>
+                <span>동화 느낌 일러스트</span>
+              </div>
             </div>
-          </a>
+            <div
+              class="project"
+              data-type="illust"
+              data-lightboximg="img/projects/illust5.jpeg"
+            >
+              <img
+                src="img/projects/illust5_thm.jpg"
+                alt="습작"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>일러스트 습작</h3>
+                <span>설날을 주제로 한 토끼 일러스트</span>
+              </div>
+            </div>
+            <div
+              class="project"
+              data-type="illust"
+              data-lightboximg="img/projects/illust6.png"
+            >
+              <img
+                src="img/projects/illust6_thm.jpg"
+                alt="습작"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>일러스트 습작</h3>
+                <span>달이 떠오른 바다</span>
+              </div>
+            </div>
+            <div
+              class="project"
+              data-type="illust"
+              data-lightboximg="img/projects/illust8.jpeg"
+            >
+              <img
+                src="img/projects/illust7_thm.jpg"
+                alt="습작"
+                class="project__img"
+              />
+              <div class="project__description">
+                <h3>모작</h3>
+                <span>화장품 화보 모작</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="lightbox__overlay">
+          <img src="" alt="" id="lightbox__item" />
+        </div>
+      </section>
+      <section id="work_frontend" class="section section__container">
+        <div class="section__title_wrap">
+          <h1 class="section__title">My Work</h1>
+          <h3 class="title__desc">02 Front-end</h3>
+        </div>
+        <div class="frontend__projects">
+          <div class="project__item">
+            <span class="front__num">01</span>
+            <a
+              href="https://woori0907.github.io/tip-calculator-react/"
+              target="_blank"
+            >
+              <div class="img__cover">
+                <img
+                  src="img/projects/pic_tipcalc.jpg"
+                  alt=""
+                  class="front__screenshot"
+                />
+              </div>
+              <div class="front__description">
+                <p class="project__title">Tip Calculator</p>
+                <p class="project__lang">React</p>
+              </div>
+            </a>
+          </div>
+          <div class="project__item">
+            <span class="front__num">02</span>
+            <a href="https://nextfloor.netlify.app/" target="_blank">
+              <div class="img__cover">
+                <img
+                  src="img/projects/pic_nextfloor.jpg"
+                  alt=""
+                  class="front__screenshot"
+                />
+              </div>
+              <div class="front__description">
+                <p class="project__title">NextFloor - 쇼핑몰 홈페이지</p>
+                <p class="project__lang">React, Firebase, tailwind</p>
+              </div>
+            </a>
+          </div>
+          <div class="project__item">
+            <span class="front__num">03</span>
+            <a href="https://woori0907.github.io/mo-view/" target="_blank">
+              <div class="img__cover">
+                <img
+                  src="img/projects/moview.jpg"
+                  alt=""
+                  class="front__screenshot"
+                />
+              </div>
+              <div class="front__description">
+                <p class="project__title">영화 검색 사이트</p>
+                <p class="project__lang">React</p>
+              </div>
+            </a>
+          </div>
+          <div class="project__item">
+            <span class="front__num">04</span>
+            <a href="https://github.com/woori0907/Bloom" target="_blank">
+              <div class="img__cover">
+                <img
+                  src="img/projects/pic_bloom.jpg"
+                  alt=""
+                  class="front__screenshot"
+                />
+              </div>
+              <div class="front__description">
+                <p class="project__title">Zoom 클론코딩 사이트</p>
+                <p class="project__lang">express, WebRTC</p>
+              </div>
+            </a>
+          </div>
+          <div class="project__item">
+            <span class="front__num">05</span>
+            <a href="https://mymomentum.netlify.app/" target="_blank">
+              <div class="img__cover">
+                <img
+                  src="img/projects/pic_momentum.jpg"
+                  alt=""
+                  class="front__screenshot"
+                />
+              </div>
+              <div class="front__description">
+                <p class="project__title">To-do List</p>
+                <p class="project__lang">Html, Css, Js</p>
+              </div>
+            </a>
+          </div>
+          <div class="project__item">
+            <span class="front__num">06</span>
+            <a
+              href="https://woori0907.github.io/thekingsaffection/"
+              target="_blank"
+            >
+              <div class="img__cover">
+                <img
+                  src="img/projects/pic_kingsaffection.jpg"
+                  alt=""
+                  class="front__screenshot"
+                />
+              </div>
+              <div class="front__description">
+                <p class="project__title">드라마 소개 홈페이지</p>
+                <p class="project__lang">Html, Css, Js</p>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
       <!-- contact -->
@@ -398,10 +585,10 @@
             <a href="#about"><span class="item__dot"></span></a>
           </li>
           <li class="dotNav__item">
-            <a href="#skills"><span class="item__dot"></span></a>
+            <a href="#work"><span class="item__dot"></span></a>
           </li>
           <li class="dotNav__item">
-            <a href="#work"><span class="item__dot"></span></a>
+            <a href="#work_frontend"><span class="item__dot"></span></a>
           </li>
           <li class="dotNav__item">
             <a href="#contact"><span class="item__dot"></span></a>

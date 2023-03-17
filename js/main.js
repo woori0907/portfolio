@@ -3,14 +3,18 @@
 const pages = document.getElementsByClassName("section");
 let pagenation = 0;
 let lastPage = pages.length - 1;
+const cursor = document.querySelector(".cursor");
+let mouseX;
+let mouseY;
 
-//Handle scrolling when tapping on the contact me button
-const btnContactMe = document.querySelector(".home__contact");
-btnContactMe.addEventListener("click", () => {
-  scrollIntoView("#contact");
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.pageY;
+
+  cursor.style.left = mouseX + "px";
+  cursor.style.top = mouseY + "px";
 });
 
-//make home section to transparent
 const homeWrap = document.querySelector(".home__wrap");
 const homeHeight = homeWrap.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
@@ -29,7 +33,8 @@ dotNavItem.forEach((item, index) => {
   item.addEventListener("click", (e) => {
     dotNavItem[prev].classList.remove("active");
     dotNavItem[index].classList.add("active");
-    prev = index;
+    pages[index].scrollIntoView({ behavior: "smooth" });
+    pagenation = index;
   });
 });
 
@@ -47,12 +52,20 @@ window.addEventListener(
       //위로 갈 때
       if (e.deltaY < 0) {
         pagenation--;
+        if (prev) {
+          pages[prev].classList.remove("active");
+        }
+        pages[pagenation].classList.add("active");
         if (pagenation < 0) pagenation = 0;
         pages[pagenation].scrollIntoView({ behavior: "smooth" });
       }
       //밑으로 갈 때
       else if (e.deltaY > 0) {
         pagenation++;
+        if (prev) {
+          pages[prev].classList.remove("active");
+        }
+        pages[pagenation].classList.add("active");
         if (pagenation > lastPage) pagenation = lastPage;
         pages[pagenation].scrollIntoView({ behavior: "smooth" });
       }
@@ -94,6 +107,24 @@ workBtnContainer.addEventListener("click", (event) => {
     projectContainer.classList.remove("anim-out");
   }, 300);
 });
+
+const lightbox = (e) => {
+  const elem = e.target;
+  const elemId = elem.getAttribute("id");
+  const lightboxOverlay = document.querySelector("#lightbox__overlay");
+  const lightboxitem = document.querySelector("#lightbox__item");
+  if (elem.parentNode.hasAttribute("data-lightboximg")) {
+    lightboxOverlay.classList.add("visible");
+    const newImg = elem.parentNode.getAttribute("data-lightboximg");
+    lightboxitem.setAttribute("src", newImg);
+  } else if (elemId == "lightbox" || elemId == "lightbox__item") {
+    lightboxOverlay.classList.remove("visible");
+    lightboxitem.setAttribute("src", "");
+  } else {
+  }
+};
+
+document.addEventListener("click", lightbox);
 
 const sectionIds = [
   "#home",
